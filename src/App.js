@@ -1,18 +1,24 @@
 import './App.css';
 import { Route, Switch, Redirect } from "react-router-dom";
 import Posts from "./components/posts";
+import PNhome from "./components/PNhome";
+import PNnavbar from "./components/PNnavbar";
 
 function App() {
 
   return (
       <div className="container-fluid">
-        <div className="container">
-            <div className="content">
-                <Switch>
-                    <Route path="/" exact component={Posts} />
-                </Switch>
-            </div>
-        </div>
+          <div className="container">
+              <div className="content">
+                  <div className="container-fluid">
+                      <PNnavbar />
+                  </div>
+                  <Switch>
+                      <Route path="/" exact component={Posts} />
+                      <Route path="/home" exact component={PNhome} />
+                  </Switch>
+              </div>
+          </div>
       </div>
   );
 }
